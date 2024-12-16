@@ -1,7 +1,7 @@
 const WIDTH = window.innerWidth - 15;
 const HEIGHT = window.innerHeight - 100;
 
-const URL = "C:/Users/FOREST/Desktop/SEMESTR-7/4/kg_lr4/";
+const URL = "https://github.com/ForestYSF/kg4/tree/main/4/kg_lr4";
 
 // Load .obj model with .mtl
 function loadMTLplusOBJ(mtlURL, objURL, loadFunction) {
@@ -41,11 +41,7 @@ function main() {
 	const planeSize = 10;
 	const textureLoader = new THREE.TextureLoader();
 	
-	const floorTexture = textureLoader.load("textures/wood-floor.jpg", function() {
-		console.log("Текстура пола загружена");
-	}, undefined, function(error) {
-		console.error("Ошибка загрузки текстуры: ", error);
-	});
+	const floorTexture = textureLoader.load(URL + "textures/wood-floor.jpg")
 	floorTexture.wrapS = THREE.RepeatWrapping;
 	floorTexture.wrapT = THREE.RepeatWrapping;
 	floorTexture.magFilter = THREE.NearestFilter;
