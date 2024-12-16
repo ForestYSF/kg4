@@ -1,7 +1,7 @@
 const WIDTH = window.innerWidth - 15;
 const HEIGHT = window.innerHeight - 100;
 
-const URL = "https://github.com/ForestYSF/kg4/tree/main/4/kg_lr4";
+const URL = "https://forestysf.github.io/kg4/4/kg_lr4/";
 
 // Load .obj model with .mtl
 function loadMTLplusOBJ(mtlURL, objURL, loadFunction) {
@@ -123,7 +123,6 @@ function main() {
 	// Table
 	const tableTexture = textureLoader.load(URL + "textures/table-black.jpg");
 	tableTexture.magFilter = THREE.NearestFilter
-	
 	// Table leg
 	var legTopRadius = 0.15;
 	var legBottomRadius = 0.1;
@@ -132,13 +131,13 @@ function main() {
 
 	var tableLegGeometry = new THREE.CylinderGeometry(legTopRadius, legBottomRadius,
 		legHeight, legSegnments);
-	var legMaterial = new THREE.MeshPhongMaterial({
-		color: 0xdaa520,
-  		emissive: 0x000000,
-  		specular: 0xbcbcbc,
-		map: tableTexture,
-		roughness: 0,
-	});
+		var legMaterial = new THREE.MeshStandardMaterial({
+			color: 0xdaa520,
+			emissive: 0x000000,
+			specular: 0xbcbcbc,
+			map: tableTexture,
+			roughness: 0,
+		});
 	
 	var tableLeg = new THREE.Mesh(tableLegGeometry, legMaterial);
 	tableLeg.position.set(2, 0.75,  -1.5);
